@@ -34,3 +34,18 @@ If you wish to run in headed or debug mode (or both), use:
 yarn playwright test --debug --headed
 ```
 
+### Notes
+#### Choice of Site
+If given more time, I would have chosen a less performance-focused site with fewer constraints (e.g. rate limiting). Unfortunately the rate limiting began to appear as I added more and more tests, making it a bit problematic. 
+I didn't want to waste the effort I'd already put in so I implemented handling for it, but it's not ideal.
+
+The HN page is not particularly ideal, as there is not a great deal that can be done to test the site without running into rate limiting. It also doesn't utilise a lot of things that would be fun to test (e.g. SSO, MFA, etc).
+
+#### Tests I'd add given more time 
+- Handling session expiration
+- Handling browser cookie clearing
+- Testing keyboard navigation (a11y)
+- Testing back button behaviour after login
+- Testing direct access to login-required pages without login
+- Testing post-login access to protected features (e.g. upvotes)
+- Further security tests (e.g. path traversal with ../)
