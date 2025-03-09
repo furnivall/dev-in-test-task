@@ -29,3 +29,7 @@ test('Login with invalid password but valid username', async ({ page, logger }) 
     }
     await expect(loginPage.badLoginErrorMessage).toBeVisible();
 });
+
+// todo: one or both fields empty
+// todo: extremely long strings in one or both fields
+// todo: special characters in one or both fields
