@@ -48,4 +48,4 @@ The HN page is not particularly ideal, as there is not a great deal that can be 
 - Testing back button behaviour after login
 - Testing direct access to login-required pages without login
 - Testing post-login access to protected features (e.g. upvotes)
-- Further security tests (e.g. path traversal with ../)
+- Further security tests (e.g. path traversal with `../`)
