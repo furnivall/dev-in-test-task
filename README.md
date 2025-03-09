@@ -5,7 +5,7 @@ This repository contains a Playwright test suite that automates the login and ac
 ### Key Features
 
 #### Custom Logger
--  The custom Logger provides detailed, colourised output for each test step. It can suppress success messages when rate limiting is detected, ensuring that the test output remains clear and informative. 
+-  The custom Logger provides detailed, colourised output for each test. The coloured output allows us to easily track the output of tests in heavily parallelised test runs.  The logger also can suppress success messages when rate limiting is detected, ensuring that the test output remains clear and informative. 
 
 #### Rate Limiting Handling
 - After login or account creation actions, the suite checks for rate-limiting indicators (e.g., "Validation required", "Sorry, we're not able to serve your requests this quickly", or a reCAPTCHA iframe). If detected, the test logs a warning, sets a flag in the custom logger, and returns early so the test doesn’t continue with a false positive.
@@ -14,7 +14,7 @@ This repository contains a Playwright test suite that automates the login and ac
 ### Getting Started
 #### Pre-requisites
 - NodeJS installed on your machine
-- Yarn too
+- Yarn too (with corepack enabled!)
 
 #### Installation
 - Clone the repository
@@ -36,8 +36,8 @@ yarn playwright test --debug --headed
 
 ### Notes
 #### Choice of Site
-If given more time, I would have chosen a less performance-focused site with fewer constraints (e.g. rate limiting). Unfortunately the rate limiting began to appear as I added more and more tests, making it a bit problematic. 
-I didn't want to waste the effort I'd already put in so I implemented handling for it, but it's not ideal.
+If given more time, I would have chosen a less performance-focused site with fewer security constraints (e.g. rate limiting). Unfortunately the rate limiting began to appear as I added more and more tests, making it a bit problematic. 
+I didn't want to waste the effort I'd already put in so I implemented a bit of handling for it to clear up the test output, but it's not ideal.
 
 The HN page is not particularly ideal, as there is not a great deal that can be done to test the site without running into rate limiting. It also doesn't utilise a lot of things that would be fun to test (e.g. SSO, MFA, etc).
 
