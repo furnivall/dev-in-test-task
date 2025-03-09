@@ -1,5 +1,7 @@
 import { test, expect } from '../utils/fixtures.js';
 
+// I left this in just to use it to test the coloured strings but figured why not just leave it here.
+
 test('has title', async ({ page, logger }) => {
   await page.goto('https://playwright.dev/');
 
